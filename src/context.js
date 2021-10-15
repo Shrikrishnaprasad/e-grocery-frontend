@@ -9,7 +9,9 @@ import reducer from "./reducer";
 
 const AppContext = createContext();
 
-const cartItems = [];
+const cartItems = JSON.parse(localStorage.getItem("cart")).length
+  ? JSON.parse(localStorage.getItem("cart"))
+  : [];
 const initialState = {
   cart: cartItems,
   total: 0,
@@ -21,8 +23,11 @@ const AppProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
   const [user, setUser] = useState(initialUser);
 
+  const URL = "https://e-grocery-shop.herokuapp.com";
+
   const clearCart = () => {
     dispatch({ type: "CLEAR_CART" });
+    localStorage.removeItem("cart");
   };
   const addCart = (item) => {
     dispatch({ type: "ADD_CART", payload: item });
@@ -43,6 +48,7 @@ const AppProvider = ({ children }) => {
 
   useEffect(() => {
     dispatch({ type: "GET_TOTALS" });
+    localStorage.setItem("cart", JSON.stringify(state.cart));
   }, [state.cart]);
 
   useEffect(() => {
@@ -65,6 +71,7 @@ const AppProvider = ({ children }) => {
       value={{
         ...state,
         ...value,
+        URL,
       }}
     >
       {children}

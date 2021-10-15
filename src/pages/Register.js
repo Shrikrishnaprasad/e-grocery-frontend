@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useHistory } from "react-router";
 import styled from "styled-components";
 import Navbar from "../components/Navbar";
+import { useGlobalContext } from "../context";
 import { mobile } from "../responsive";
 
 const Container = styled.div`
@@ -60,12 +61,32 @@ const Button = styled.button`
 const Register = () => {
   const history = useHistory();
   const [userDetails, setUserDetails] = useState({});
+  const { URL } = useGlobalContext();
 
   const handleSubmit = (e) => {
     e.preventDefault();
     const { userName, mobile, email, password, address } = userDetails;
     if (userName && email && password && mobile && address) {
-      history.push("/login");
+      let headersList = {
+        "Content-Type": "application/json",
+      };
+      fetch(`${URL}/user/register`, {
+        method: "POST",
+        body: JSON.stringify(userDetails),
+        headers: headersList,
+      })
+        .then(function (response) {
+          return response.json();
+        })
+        .then(function (data) {
+          if (data.email) {
+            alert("Registration done successfully!");
+            history.push("/login");
+          } else {
+            alert(data.keyValue.email + " this Email is already exists!");
+          }
+        })
+        .catch((err) => console.log(err));
     } else {
       alert("Please fill out all the fields");
     }

@@ -64,14 +64,38 @@ const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const { setUser } = useGlobalContext();
+  const { user, setUser, URL } = useGlobalContext();
   const handleSubmit = (e) => {
     e.preventDefault();
     if (email && password) {
-      setUser({ name: email });
-      setEmail("");
-      setPassword("");
-      history.goBack();
+      let headersList = {
+        "Content-Type": "application/json",
+      };
+      fetch(`${URL}/user/login`, {
+        method: "POST",
+        body: JSON.stringify({ email, password }),
+        headers: headersList,
+      })
+        .then(function (response) {
+          return response.json();
+        })
+        .then(function (data) {
+          if (data.userName) {
+            alert("Hi " + data.userName + " !! You are logged in ");
+            setEmail("");
+            setPassword("");
+            setUser({
+              ...user,
+              name: data.userName,
+              email: data.email,
+              mobile: data.mobile,
+            });
+            history.push("/");
+          } else {
+            alert(data);
+          }
+        })
+        .catch((err) => console.log(err));
     } else {
       alert("Please fill out all the fields");
     }

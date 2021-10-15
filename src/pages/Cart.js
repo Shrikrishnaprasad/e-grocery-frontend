@@ -7,6 +7,7 @@ import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 import { mobile } from "../responsive";
 import { useGlobalContext } from "../context";
+import PayByRazorPay from "./PayByRazorPay";
 
 const Container = styled.div``;
 
@@ -138,14 +139,6 @@ const SummaryItemText = styled.span``;
 
 const SummaryItemPrice = styled.span``;
 
-const Button = styled.button`
-  width: 100%;
-  padding: 10px;
-  background-color: black;
-  color: white;
-  font-weight: 600;
-`;
-
 const Cart = () => {
   const history = useHistory();
   const { cart, total, clearCart, toggleAmount } = useGlobalContext();
@@ -166,12 +159,11 @@ const Cart = () => {
           <TopButton onClick={clearCart} style={{ color: "red" }}>
             CLEAR CART
           </TopButton>
-          <TopButton type="filled">CHECKOUT NOW</TopButton>
         </Top>
         <Bottom>
           <Info>
             {cart?.length === 0 && <Title>Your cart is empty</Title>}
-            {cart.map((item) => {
+            {cart?.map((item) => {
               return (
                 <>
                   <Product key={item?.id}>
@@ -231,7 +223,16 @@ const Cart = () => {
                 ₹. {total >= 500 ? total - 60 : total}
               </SummaryItemPrice>
             </SummaryItem>
-            <Button>CHECKOUT NOW</Button>
+            {total > 0 ? (
+              <PayByRazorPay amount={total >= 500 ? total - 60 : total} />
+            ) : (
+              <TopButton
+                onClick={() => alert("Your cart is empty!")}
+                style={{ width: "100%" }}
+              >
+                CHECKOUT NOW
+              </TopButton>
+            )}
           </Summary>
         </Bottom>
       </Wrapper>
