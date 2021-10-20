@@ -49,6 +49,7 @@ export const popularProducts = [
     name: "Apple",
     category: "fruit",
     price: 80,
+    desc: "",
   },
   {
     id: 2,
@@ -56,6 +57,7 @@ export const popularProducts = [
     name: "Watermelon",
     category: "fruit",
     price: 70,
+    desc: "",
   },
   {
     id: 3,
@@ -63,6 +65,7 @@ export const popularProducts = [
     name: "Orange",
     category: "fruit",
     price: 80,
+    desc: "",
   },
   {
     id: 4,
@@ -70,6 +73,7 @@ export const popularProducts = [
     name: "Strawberry",
     category: "fruit",
     price: 90,
+    desc: "",
   },
   {
     id: 5,
@@ -77,6 +81,7 @@ export const popularProducts = [
     name: "Grape",
     category: "fruit",
     price: 60,
+    desc: "",
   },
   {
     id: 6,
@@ -84,6 +89,7 @@ export const popularProducts = [
     name: "Cherry",
     category: "fruit",
     price: 50,
+    desc: "",
   },
   {
     id: 7,
@@ -91,6 +97,7 @@ export const popularProducts = [
     name: "Mango",
     category: "fruit",
     price: 150,
+    desc: "",
   },
   {
     id: 8,
@@ -98,6 +105,7 @@ export const popularProducts = [
     name: "Nectarine",
     category: "fruit",
     price: 80,
+    desc: "",
   },
   {
     id: 9,
@@ -105,6 +113,7 @@ export const popularProducts = [
     name: "Banana",
     category: "fruit",
     price: 100,
+    desc: "",
   },
   {
     id: 10,
@@ -112,6 +121,7 @@ export const popularProducts = [
     name: "Pomegranate",
     category: "fruit",
     price: 200,
+    desc: "",
   },
 
   {
@@ -120,6 +130,7 @@ export const popularProducts = [
     name: "Tomato",
     category: "vegetable",
     price: 70,
+    desc: "",
   },
   {
     id: 12,
@@ -127,6 +138,7 @@ export const popularProducts = [
     name: "Corn",
     category: "vegetable",
     price: 120,
+    desc: "",
   },
   {
     id: 13,
@@ -134,6 +146,7 @@ export const popularProducts = [
     name: "Carrot",
     category: "vegetable",
     price: 80,
+    desc: "",
   },
   {
     id: 14,
@@ -141,6 +154,7 @@ export const popularProducts = [
     name: "Green pepper",
     category: "vegetable",
     price: 40,
+    desc: "",
   },
   {
     id: 15,
@@ -148,6 +162,7 @@ export const popularProducts = [
     name: "Pea",
     category: "vegetable",
     price: 50,
+    desc: "",
   },
   {
     id: 16,
@@ -155,6 +170,7 @@ export const popularProducts = [
     name: "Mushroom",
     category: "vegetable",
     price: 100,
+    desc: "",
   },
   {
     id: 17,
@@ -162,6 +178,7 @@ export const popularProducts = [
     name: "Red Cabbage",
     category: "vegetable",
     price: 60,
+    desc: "",
   },
   {
     id: 18,
@@ -169,6 +186,7 @@ export const popularProducts = [
     name: "Radish",
     category: "vegetable",
     price: 70,
+    desc: "",
   },
   {
     id: 19,
@@ -176,6 +194,7 @@ export const popularProducts = [
     name: "Red pepper",
     category: "vegetable",
     price: 60,
+    desc: "",
   },
   {
     id: 20,
@@ -183,6 +202,7 @@ export const popularProducts = [
     name: "Broccoli",
     category: "vegetable",
     price: 90,
+    desc: "",
   },
   {
     id: 21,
@@ -190,6 +210,7 @@ export const popularProducts = [
     name: "Cauliflower",
     category: "vegetable",
     price: 80,
+    desc: "",
   },
   {
     id: 22,
@@ -197,6 +218,7 @@ export const popularProducts = [
     name: "Onion",
     category: "vegetable",
     price: 60,
+    desc: "",
   },
   {
     id: 23,
@@ -204,6 +226,7 @@ export const popularProducts = [
     name: "Garlic",
     category: "vegetable",
     price: 60,
+    desc: "",
   },
   {
     id: 24,
@@ -211,6 +234,7 @@ export const popularProducts = [
     name: "Pumpkin",
     category: "vegetable",
     price: 100,
+    desc: "",
   },
   {
     id: 25,
@@ -218,6 +242,7 @@ export const popularProducts = [
     name: "Beet",
     category: "vegetable",
     price: 50,
+    desc: "",
   },
 
   {
@@ -226,6 +251,7 @@ export const popularProducts = [
     name: "Pepper",
     category: "spices",
     price: 60,
+    desc: "",
   },
   {
     id: 27,
@@ -233,6 +259,7 @@ export const popularProducts = [
     name: "Fenugreek",
     category: "spices",
     price: 90,
+    desc: "",
   },
   {
     id: 28,
@@ -240,6 +267,7 @@ export const popularProducts = [
     name: "Saffron",
     category: "spices",
     price: 250,
+    desc: "",
   },
   {
     id: 29,
@@ -247,6 +275,7 @@ export const popularProducts = [
     name: "Cloves",
     category: "spices",
     price: 80,
+    desc: "",
   },
   {
     id: 30,
@@ -254,6 +283,7 @@ export const popularProducts = [
     name: "Allspice",
     category: "spices",
     price: 70,
+    desc: "",
   },
   {
     id: 31,
@@ -261,6 +291,7 @@ export const popularProducts = [
     name: "Cinnamon sticks",
     category: "spices",
     price: 60,
+    desc: "",
   },
   {
     id: 32,
@@ -268,6 +299,7 @@ export const popularProducts = [
     name: "Star anise",
     category: "spices",
     price: 50,
+    desc: "",
   },
   {
     id: 33,
@@ -275,6 +307,7 @@ export const popularProducts = [
     name: "Green cardamoms",
     category: "spices",
     price: 100,
+    desc: "",
   },
   {
     id: 34,
@@ -282,6 +315,7 @@ export const popularProducts = [
     name: "Bay leaf",
     category: "spices",
     price: 30,
+    desc: "",
   },
   {
     id: 35,
@@ -289,5 +323,6 @@ export const popularProducts = [
     name: "Mace",
     category: "spices",
     price: 80,
+    desc: "",
   },
 ];
