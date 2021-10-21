@@ -8,6 +8,7 @@ import Navbar from "../components/Navbar";
 import { mobile } from "../responsive";
 import { useGlobalContext } from "../context";
 import PayByRazorPay from "./PayByRazorPay";
+import React from "react";
 
 const Container = styled.div``;
 
@@ -165,8 +166,8 @@ const Cart = () => {
             {cart?.length === 0 && <Title>Your cart is empty</Title>}
             {cart?.map((item) => {
               return (
-                <>
-                  <Product key={item?.id}>
+                <React.Fragment key={item?.id}>
+                  <Product>
                     <ProductDetail>
                       <Image src={item?.img} />
                       <Details>
@@ -197,7 +198,7 @@ const Cart = () => {
                     </PriceDetail>
                   </Product>
                   <Hr />
-                </>
+                </React.Fragment>
               );
             })}
           </Info>
