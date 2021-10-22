@@ -16,6 +16,7 @@ const App = () => {
           <ProductList />
         </Route>
         <Route exact path="/product/:id">
+          {/* product details */}
           <Product />
         </Route>
         <Route exact path="/register">
